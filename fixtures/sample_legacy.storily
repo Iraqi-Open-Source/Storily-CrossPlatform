@@ -1,0 +1,13 @@
+[
+  {
+    "id": "b47f0974-a70d-4ecb-9537-22a8198e12aa",
+    "imagePath": "My old image.tiff",
+    "descriptionText": "Old Storily sample",
+    "location": "Baghdad",
+    "date": 789004800.0,
+    "showDate": true,
+    "style": "classic",
+    "textAlignment": "center",
+    "imageData": "SUkqAAgAAAAKAAABBAABAAAABAAAAAEBBAABAAAABAAAAAIBAwADAAAAhgAAAAMBAwABAAAAAQAAAAYBAwABAAAAAgAAABEBBAABAAAAjAAAABUBAwABAAAAAwAAABYBBAABAAAABAAAABcBBAABAAAAMAAAABwBAwABAAAAAQAAAAAAAAAIAAgACABkMrRkMrRkMrRkMrRkMrRkMrRkMrRkMrRkMrRkMrRkMrRkMrRkMrRkMrRkMrRkMrQ="
+  }
+]

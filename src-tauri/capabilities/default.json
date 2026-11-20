@@ -1,0 +1,14 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "App window permissions for Storily",
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "core:default",
+    "dialog:default",
+    "dialog:allow-save",
+    "fs:allow-write-file"
+  ]
+}

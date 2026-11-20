@@ -1,0 +1,111 @@
+name: Build Storily mobile
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  android:
+    name: Android arm64 APK and AAB
+    runs-on: ubuntu-22.04
+    env:
+      CI: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - name: Set up Android SDK and NDK
+        shell: bash
+        run: |
+          yes | sdkmanager --licenses || true
+          sdkmanager 'platforms;android-35' 'build-tools;35.0.0' 'ndk;27.2.12479018'
+          echo "NDK_HOME=${ANDROID_HOME}/ndk/27.2.12479018" >> "$GITHUB_ENV"
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android,armv7-linux-androideabi
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: './src-tauri -> target'
+      - run: npm install --no-audit --no-fund
+      - run: python3 scripts/sync_original_icon.py --strict
+      - run: npm run tauri android init -- --ci
+      - name: Build installable debug APK (development signing key)
+        run: npm run tauri android build -- --debug --apk --target aarch64 --ci
+      - name: Build unsigned release Android App Bundle
+        run: npm run tauri android build -- --aab --target aarch64 --ci
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Storily-Android-APK-AAB
+          path: |
+            src-tauri/gen/android/app/build/outputs/apk/**/*.apk
+            src-tauri/gen/android/app/build/outputs/bundle/**/*.aab
+          if-no-files-found: error
+          retention-days: 30
+      - name: Attach Android bundles to draft GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          generate_release_notes: true
+          files: |
+            src-tauri/gen/android/app/build/outputs/apk/**/*.apk
+            src-tauri/gen/android/app/build/outputs/bundle/**/*.aab
+
+  ios-simulator:
+    name: iOS and iPadOS simulator app (unsigned)
+    runs-on: macos-15
+    env:
+      CI: 'true'
+      CODE_SIGNING_ALLOWED: 'NO'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-ios-sim,aarch64-apple-ios
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: './src-tauri -> target'
+      - name: Install CocoaPods
+        run: brew install cocoapods || true
+      - run: npm install --no-audit --no-fund
+      - run: python3 scripts/sync_original_icon.py --strict
+      - run: npm run tauri ios init -- --ci
+      - name: Compile iPhone/iPad simulator app without Apple certificate
+        run: npm run tauri ios build -- --target aarch64-sim --ci
+      - name: Package simulator app
+        shell: bash
+        run: |
+          mkdir -p distribution
+          find src-tauri/gen/apple -name '*.app' -type d -print0 | while IFS= read -r -d '' app; do
+            ditto -c -k --keepParent "$app" "distribution/Storily-iOS-Simulator.app.zip"
+          done
+          test -f distribution/Storily-iOS-Simulator.app.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Storily-iPhone-iPad-Simulator
+          path: distribution/*.zip
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Attach iPhone and iPad simulator app to draft GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          generate_release_notes: true
+          files: distribution/*.zip

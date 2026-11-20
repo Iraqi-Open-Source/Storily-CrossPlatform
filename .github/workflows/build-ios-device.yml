@@ -1,0 +1,51 @@
+name: Build signed iPhone and iPad IPA
+
+# An iPhone/iPad-installable IPA requires YOUR Apple Distribution certificate,
+# provisioning profile and App Store Connect team. No credentials are bundled.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  signed-ipa:
+    name: iPhone and iPad IPA (Apple signed)
+    runs-on: macos-15
+    env:
+      CI: 'true'
+      APPLE_DEVELOPMENT_TEAM: ${{ secrets.APPLE_DEVELOPMENT_TEAM }}
+      IOS_CERTIFICATE: ${{ secrets.IOS_CERTIFICATE }}
+      IOS_CERTIFICATE_PASSWORD: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
+      IOS_MOBILE_PROVISION: ${{ secrets.IOS_MOBILE_PROVISION }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Apple signing secrets
+        shell: bash
+        run: |
+          if [[ -z "$APPLE_DEVELOPMENT_TEAM" || -z "$IOS_CERTIFICATE" || -z "$IOS_CERTIFICATE_PASSWORD" || -z "$IOS_MOBILE_PROVISION" ]]; then
+            echo 'Missing Apple signing secrets. See README.md > Signed iOS builds.' >&2
+            exit 1
+          fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-ios
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: './src-tauri -> target'
+      - name: Install CocoaPods
+        run: brew install cocoapods || true
+      - run: npm install --no-audit --no-fund
+      - run: python3 scripts/sync_original_icon.py --strict
+      - run: npm run tauri ios init -- --ci
+      - name: Build signed IPA for App Store Connect and TestFlight
+        run: npm run tauri ios build -- --export-method app-store-connect --ci
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Storily-iPhone-iPad-Signed-IPA
+          path: src-tauri/gen/apple/build/arm64/*.ipa
+          if-no-files-found: error
+          retention-days: 30
