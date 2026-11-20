@@ -23,10 +23,15 @@ jobs:
           java-version: '17'
       - uses: android-actions/setup-android@v4
         with:
-          packages: platform-tools platforms;android-37 build-tools;36.0.0 ndk;29.0.13846066
-      - name: Point Tauri at the Android NDK
+          packages: platform-tools platforms;android-37.0 build-tools;36.0.0 ndk;29.0.13846066
+      - name: Point Tauri at the Android SDK and NDK
         shell: bash
-        run: echo "NDK_HOME=${ANDROID_HOME}/ndk/29.0.13846066" >> "$GITHUB_ENV"
+        run: |
+          # Google publishes API 37 as platforms/android-37.0. Tauri's generated
+          # project sets compileSdk = 37, and AGP looks up platforms/android-37.
+          test -d "${ANDROID_HOME}/platforms/android-37.0"
+          ln -sfn android-37.0 "${ANDROID_HOME}/platforms/android-37"
+          echo "NDK_HOME=${ANDROID_HOME}/ndk/29.0.13846066" >> "$GITHUB_ENV"
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: aarch64-linux-android,armv7-linux-androideabi
