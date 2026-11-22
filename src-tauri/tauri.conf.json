@@ -4,9 +4,9 @@
   "version": "0.1.1",
   "identifier": "com.waadmawlood.storily",
   "build": {
-    "beforeDevCommand": "npm run dev",
+    "beforeDevCommand": "npm run icons:apply && npm run dev",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "npm run build",
+    "beforeBuildCommand": "npm run icons:apply && npm run build",
     "frontendDist": "../dist"
   },
   "app": {

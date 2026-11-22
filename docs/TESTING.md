@@ -13,7 +13,7 @@ This environment could not install Rust crates or build native targets, so this 
 - [ ] Build Windows x64 NSIS EXE and MSI; install and launch on Windows 10 and 11 (WebView2 installed).
 - [ ] Build macOS Intel and arm64 .dmg / .app; verify Gatekeeper/signing behavior and icons.
 - [ ] Build Ubuntu 22.04 .deb/.rpm/.AppImage; run on actual Linux distro with correct WebKitGTK.
-- [ ] Android: build and install debug APK on Android 8+; import/export using scoped document provider (`content://` URI).
-- [ ] iPhone & iPad: compile simulator app, test photo picker and save dialogs; check iPhone safe areas and tablet layout.
+- [ ] Android: build and install debug APK on Android 8+; the launcher icon is the Storily mark, not the green Android template icon. Import/export using scoped document provider (`content://` URI).
+- [ ] iPhone & iPad: compile simulator app; the home-screen icon is the Storily mark, not the Tauri logo. Test photo picker and save dialogs; check iPhone safe areas and tablet layout.
 - [ ] Configure Apple signing and build real .ipa (App Store or development provisioning); configure Android release keystore and sign AAB.
 - [ ] Verify release binaries contain exact icon fetched from upstream (not bundled offline placeholder).

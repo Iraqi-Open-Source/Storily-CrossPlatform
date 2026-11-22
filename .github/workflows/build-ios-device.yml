@@ -41,6 +41,8 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: python3 scripts/sync_original_icon.py --strict
       - run: npm run tauri ios init -- --ci
+      - name: Replace the default iOS app icon with the Storily icon
+        run: npm run icons:apply
       - name: Build signed IPA for App Store Connect and TestFlight
         run: npm run tauri ios build -- --export-method app-store-connect --ci
       - uses: actions/upload-artifact@v4

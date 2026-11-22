@@ -41,6 +41,8 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: python3 scripts/sync_original_icon.py --strict
       - run: npm run tauri android init -- --ci
+      - name: Replace the default Android launcher art with the Storily icon
+        run: npm run icons:apply
       - name: Build installable debug APK (development signing key)
         run: npm run tauri android build -- --debug --apk --target aarch64 --ci
       - name: Build unsigned release Android App Bundle
@@ -85,6 +87,8 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: python3 scripts/sync_original_icon.py --strict
       - run: npm run tauri ios init -- --ci
+      - name: Replace the default iOS app icon with the Storily icon
+        run: npm run icons:apply
       - name: Compile iPhone/iPad simulator app without Apple certificate
         run: npm run tauri ios build -- --target aarch64-sim --ci
       - name: Package simulator app

@@ -71,9 +71,12 @@ cargo test --manifest-path src-tauri/Cargo.toml
 npm install
 npm run icons
 npm run tauri android init -- --ci
+npm run icons:apply
 npm run tauri android dev
 npm run tauri android build -- --debug --apk --target aarch64 --ci
 ```
+
+`npm run icons:apply` replaces the default launcher art created by `tauri android init` and `tauri ios init` (the green Android robot, and the Tauri logo on iPhone and iPad) with the Storily icon. `tauri dev` and `tauri build` run that step automatically. If a phone already shows the old icon, uninstall the app and install a newly built package.
 
 APK: `src-tauri/gen/android/app/build/outputs/apk/...` after the build. Debug APKs can be installed for testing. Release AABs **must be signed** with a dedicated Android keystore before Play Store publication.
 
@@ -83,6 +86,7 @@ APK: `src-tauri/gen/android/app/build/outputs/apk/...` after the build. Debug AP
 npm install
 npm run icons
 npm run tauri ios init -- --ci
+npm run icons:apply
 npm run tauri ios dev
 npm run tauri ios build -- --target aarch64-sim --ci
 ```
