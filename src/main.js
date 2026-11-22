@@ -80,6 +80,30 @@ const en = {
   useDefault: 'Use default', customAlbum: 'Custom for this album', pdfForAlbum: 'PDF settings',
   sortManual: 'Custom order', reorder: 'Reorder', pdfPreview: 'Preview', backPage: 'Previous page', nextPage: 'Next page',
   savedTo: 'Saved to', creatingPdf: 'Creating PDF…',
+  brandTag: 'Memory studio', workspace: 'Workspace', privateTitle: 'Private by design', privateNote: 'Local-first • No account needed',
+  eyebrowHome: 'Your personal memory space', eyebrowAlbums: 'Curated collections', eyebrowGallery: 'The moments you love',
+  favoritesDesc: 'A collection of all the photos you love', emptyAlbumDesc: 'Every little moment tells a story.',
+  settingsSubtitle: 'Customize your experience across all your devices.',
+  privacyNote: 'Your albums are stored on this device. No cloud account or external service is required.',
+  newAlbumHint: 'Give your new collection a name.', albumPlaceholder: 'Summer memories', locationPlaceholder: 'Baghdad, Iraq',
+  alignLeft: 'Left', alignCenter: 'Center', alignRight: 'Right',
+  collection: 'Storily collection', menu: 'Menu', closeNav: 'Close navigation', sort: 'Sort', grid: 'Grid', list: 'List', albumFallback: 'Album',
+  fontTahoma: 'Tahoma (Arabic)',
+  imagesAdded: '{n} images added successfully.', importedAlbum: 'Imported {name}',
+  preparedDownload: 'Prepared {name}. If the download is blocked, share the file from the device instead.',
+  addPhotosFirst: 'Add photos before exporting PDF.',
+  savePdf: 'Save PDF', saveAlbum: 'Save album', pdfDocument: 'PDF document', storilyAlbum: 'Storily album',
+  startupTitle: 'Unable to start Storily', startupHint: 'Open this app with Tauri (npm run tauri dev), not as a regular website.',
+  imageUnreadable: 'Could not read this image',
+  errImageEmpty: 'Image is empty or exceeds 40 MiB', errImageDamaged: 'Unsupported or damaged image', errImageDimensions: 'Image dimensions are too large',
+  errAlbumMissing: 'Album not found', errBatchLimit: 'Please import at most 100 images per batch',
+  errNoImages: 'No supported image files (40 MiB maximum).', errPhotoMissing: 'Photo not found', errEditedTooBig: 'Edited image exceeds 40 MiB',
+  errEditedDimensions: 'Image dimensions too large', errLegacyTooMany: 'Too many items in legacy archive', errMissingImageData: 'Missing imageData',
+  errArchiveTooBig: 'Archive exceeds 500 MiB', errArchiveUnknown: 'Unrecognized Storily archive format',
+  errArchiveFormat: 'Unsupported .storily archive format', errArchiveTooMany: 'Too many photos in archive',
+  errLegacyImage: 'Legacy image {n} has no embedded image. Re-save it as a self-contained album in the original macOS app.',
+  previewSampleName: 'Summer afternoon', previewSampleDesc: 'A quiet walk kept just as it was, where the light stayed on the street a little longer.',
+  previewSamplePlace: 'Baghdad', previewAlbum: 'Summer',
 };
 const ar = {
   all: 'مكتبتي', albums: 'الألبومات', favorites: 'المفضلة', settings: 'الإعدادات', addAlbum: 'ألبوم جديد', importAlbum: 'استيراد ألبوم',
@@ -97,7 +121,7 @@ const ar = {
   editMode: 'تعديل', previewMode: 'معاينة', adjust: 'ضبط', upscale: 'تكبير',
   brightness: 'السطوع', contrast: 'التباين', saturation: 'التشبع', vignette: 'تعتيم الحواف',
   monochrome: 'أبيض وأسود', sepia: 'بني دافئ', vibrance: 'حيوية', warm: 'دافئ', cool: 'بارد', fade: 'باهت',
-  noir: 'نوار', vintage: 'عتيق', dramatic: 'درامي', soft: 'ناعم', vivid: 'زاهٍ', matte: 'مطفي',
+  noir: 'أسود حاد', vintage: 'عتيق', dramatic: 'درامي', soft: 'ناعم', vivid: 'زاهٍ', matte: 'مطفي',
   golden: 'ذهبي', rose: 'وردي', arctic: 'قطبي', emerald: 'زمردي', film: 'فيلم',
   freeCrop: 'حر', square: '1:1', ratio43: '4:3', ratio34: '3:4', ratio169: '16:9', ratio916: '9:16',
   undo: 'تراجع', redo: 'إعادة', resetEdits: 'إعادة ضبط', compare: 'مقارنة', compareHold: 'اضغط لرؤية الصورة الأصلية', original: 'الأصلية',
@@ -119,6 +143,30 @@ const ar = {
   useDefault: 'استخدام الافتراضي', customAlbum: 'مخصص لهذا الألبوم', pdfForAlbum: 'إعدادات PDF',
   sortManual: 'ترتيب مخصص', reorder: 'إعادة الترتيب', pdfPreview: 'معاينة', backPage: 'الصفحة السابقة', nextPage: 'الصفحة التالية',
   savedTo: 'تم الحفظ في', creatingPdf: 'جارٍ إنشاء PDF…',
+  brandTag: 'استوديو الذكريات', workspace: 'مساحة العمل', privateTitle: 'خصوصية مضمّنة', privateNote: 'محلي أولاً • بلا حساب',
+  eyebrowHome: 'مساحتك الخاصة للذكريات', eyebrowAlbums: 'مجموعات منتقاة', eyebrowGallery: 'اللحظات التي تحبها',
+  favoritesDesc: 'مجموعة بكل الصور التي تحبها', emptyAlbumDesc: 'كل لحظة صغيرة تحكي قصة.',
+  settingsSubtitle: 'خصّص تجربتك على كل أجهزتك.',
+  privacyNote: 'ألبوماتك محفوظة على هذا الجهاز. لا حاجة لحساب سحابي أو خدمة خارجية.',
+  newAlbumHint: 'اختر اسماً لمجموعتك الجديدة.', albumPlaceholder: 'ذكريات الصيف', locationPlaceholder: 'بغداد، العراق',
+  alignLeft: 'يسار', alignCenter: 'وسط', alignRight: 'يمين',
+  collection: 'مجموعة ستوريلي', menu: 'القائمة', closeNav: 'إغلاق القائمة', sort: 'الترتيب', grid: 'شبكة', list: 'قائمة', albumFallback: 'ألبوم',
+  fontTahoma: 'Tahoma (يدعم العربية)',
+  imagesAdded: 'تمت إضافة {n} من الصور بنجاح.', importedAlbum: 'تم استيراد {name}',
+  preparedDownload: 'تم تجهيز {name}. إذا تعذّر التنزيل، شارك الملف من الجهاز.',
+  addPhotosFirst: 'أضف صوراً قبل تصدير PDF.',
+  savePdf: 'حفظ PDF', saveAlbum: 'حفظ الألبوم', pdfDocument: 'مستند PDF', storilyAlbum: 'ألبوم Storily',
+  startupTitle: 'تعذّر تشغيل Storily', startupHint: 'افتح التطبيق عبر Tauri، وليس كموقع عادي.',
+  imageUnreadable: 'تعذّر قراءة هذه الصورة',
+  errImageEmpty: 'الصورة فارغة أو تتجاوز 40 ميغابايت', errImageDamaged: 'الصورة غير مدعومة أو تالفة', errImageDimensions: 'أبعاد الصورة كبيرة جداً',
+  errAlbumMissing: 'الألبوم غير موجود', errBatchLimit: 'يمكن استيراد 100 صورة كحد أقصى في الدفعة الواحدة',
+  errNoImages: 'لا توجد صور مدعومة (الحد الأقصى 40 ميغابايت).', errPhotoMissing: 'الصورة غير موجودة', errEditedTooBig: 'الصورة المعدّلة تتجاوز 40 ميغابايت',
+  errEditedDimensions: 'أبعاد الصورة كبيرة جداً', errLegacyTooMany: 'الأرشيف القديم يحتوي عناصر أكثر من اللازم', errMissingImageData: 'بيانات الصورة مفقودة',
+  errArchiveTooBig: 'الأرشيف يتجاوز 500 ميغابايت', errArchiveUnknown: 'صيغة أرشيف Storily غير معروفة',
+  errArchiveFormat: 'صيغة ملف .storily غير مدعومة', errArchiveTooMany: 'الأرشيف يحتوي صوراً أكثر من اللازم',
+  errLegacyImage: 'الصورة القديمة رقم {n} بلا صورة مضمّنة. أعد حفظها كألبوم مستقل في تطبيق macOS الأصلي.',
+  previewSampleName: 'عصر صيفي', previewSampleDesc: 'نزهة هادئة بقيت كما هي، حيث أطال الضوء وقوفه في الشارع قليلاً.',
+  previewSamplePlace: 'بغداد', previewAlbum: 'الصيف',
 };
 const defaultPrefs = { lang: 'en', theme: 'light', pdfStyle: 'poster', fontSize: 16, fontFamily: 'Arial, sans-serif', fontColor: '#222036', showPageCount: true };
 function readPrefs() { try { return { ...defaultPrefs, ...JSON.parse(localStorage.getItem('storily-prefs') || '{}') }; } catch { return { ...defaultPrefs }; } }
@@ -126,6 +174,32 @@ const state = { lib: { albums: [], photos: [] }, albumId: null, photoId: null, s
 const thumbs = new Map();
 const originals = new Map();
 const t = key => (state.prefs.lang === 'ar' ? ar : en)[key] || key;
+const tf = (key, vars = {}) => Object.entries(vars).reduce((text, [name, value]) => text.replaceAll(`{${name}}`, value), t(key));
+const backendErrors = {
+  'Image is empty or exceeds 40 MiB': 'errImageEmpty',
+  'Unsupported or damaged image': 'errImageDamaged',
+  'Image dimensions are too large': 'errImageDimensions',
+  'Album not found': 'errAlbumMissing',
+  'Please import at most 100 images per batch': 'errBatchLimit',
+  'No supported image files (40 MiB maximum).': 'errNoImages',
+  'Photo not found': 'errPhotoMissing',
+  'Edited image exceeds 40 MiB': 'errEditedTooBig',
+  'Image dimensions too large': 'errEditedDimensions',
+  'Too many items in legacy archive': 'errLegacyTooMany',
+  'Missing imageData': 'errMissingImageData',
+  'Archive exceeds 500 MiB': 'errArchiveTooBig',
+  'Unrecognized Storily archive format': 'errArchiveUnknown',
+  'Unsupported .storily archive format': 'errArchiveFormat',
+  'Too many photos in archive': 'errArchiveTooMany',
+  'Could not read this image': 'imageUnreadable',
+};
+function userMessage(raw) {
+  const text = String(raw || '');
+  if (backendErrors[text]) return t(backendErrors[text]);
+  const legacy = text.match(/^Legacy image (\d+) has no embedded imageData;/);
+  if (legacy) return tf('errLegacyImage', { n: legacy[1] });
+  return t(text);
+}
 const album = () => state.lib.albums.find(a => a.id === state.albumId);
 const photo = () => state.lib.photos.find(p => p.id === state.photoId);
 const getAlbumPhotos = () => {
@@ -141,8 +215,9 @@ const getAlbumPhotos = () => {
   return items;
 };
 const albumsSorted = () => [...state.lib.albums].sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0) || String(a.createdAt).localeCompare(String(b.createdAt)));
-const fonts = [['Arial, sans-serif', 'Arial'], ['Georgia, serif', 'Georgia'], ['Tahoma, sans-serif', 'Tahoma (Arabic)']];
-const fontOptions = current => fonts.map(([value, label]) => `<option value="${value}" ${current === value ? 'selected' : ''}>${esc(label)}</option>`).join('');
+const fontChoices = () => [['Arial, sans-serif', 'Arial'], ['Georgia, serif', 'Georgia'], ['Tahoma, sans-serif', t('fontTahoma')]];
+const fontOptions = current => fontChoices().map(([value, label]) => `<option value="${value}" ${current === value ? 'selected' : ''}>${esc(label)}</option>`).join('');
+const alignOptions = current => ['left', 'center', 'right'].map(value => `<option value="${value}" ${current === value ? 'selected' : ''}>${esc(t(value === 'center' ? 'alignCenter' : value === 'right' ? 'alignRight' : 'alignLeft'))}</option>`).join('');
 const styleOptions = current => styles.map(s => `<option value="${s}" ${current === s ? 'selected' : ''}>${esc(themeLabel(s))}</option>`).join('');
 function resolvePdf(a) {
   const d = state.prefs;
@@ -169,8 +244,8 @@ function renderSidebar() {
     return `<div class="nav-row" data-drop="album" data-id="${esc(a.id)}"><button type="button" class="drag-handle" data-drag="album" data-id="${esc(a.id)}" data-action="ignore" aria-label="${esc(t('reorder'))}">${icon('grip', 14)}</button><button type="button" class="nav-entry ${state.albumId === a.id && !state.onlyFavorites ? 'active' : ''}" data-action="selectAlbum" data-id="${esc(a.id)}">${icon('folder', 18)}<span>${esc(a.title)}</span><small>${count}</small></button></div>`;
   }).join('');
   return `<aside class="sidebar ${state.mobileNav ? 'is-open' : ''}">
-    <div class="brand"><img src="/original-icon.png" alt="Storily"/><div><strong>Storily</strong><span>MEMORY STUDIO</span></div></div>
-    <div class="nav-group"><div class="nav-heading">WORKSPACE</div>
+    <div class="brand"><img src="/original-icon.png" alt="Storily"/><div><strong>Storily</strong><span>${esc(t('brandTag'))}</span></div></div>
+    <div class="nav-group"><div class="nav-heading">${esc(t('workspace'))}</div>
       <button class="nav-entry ${!state.albumId && !state.onlyFavorites ? 'active' : ''}" data-action="home">${icon('grid', 18)}<span>${esc(t('all'))}</span></button>
       <button class="nav-entry ${state.onlyFavorites ? 'active' : ''}" data-action="favorites">${icon('heart', 18)}<span>${esc(t('favorites'))}</span><small>${state.lib.photos.filter(p => p.favorite).length}</small></button></div>
     <div class="nav-group albums-group"><div class="nav-heading with-action">${esc(t('albums'))}<button aria-label="${esc(t('addAlbum'))}" data-action="newAlbum" class="icon-btn tiny">${icon('plus', 16)}</button></div>
@@ -178,7 +253,7 @@ function renderSidebar() {
       <button class="sidebar-add" data-action="newAlbum">${icon('plus', 16)} ${esc(t('addAlbum'))}</button>
       <button class="sidebar-import" data-action="importAlbum">${icon('upload', 16)} ${esc(t('importAlbum'))}</button>
     </div>
-    <div class="sidebar-bottom"><div class="storage-note">${icon('lock', 17)}<div><b>Private by design</b><small>Local-first • No account needed</small></div></div>
+    <div class="sidebar-bottom"><div class="storage-note">${icon('lock', 17)}<div><b>${esc(t('privateTitle'))}</b><small>${esc(t('privateNote'))}</small></div></div>
       <button class="nav-entry" data-action="settings">${icon('settings', 18)}<span>${esc(t('settings'))}</span></button></div>
   </aside>`;
 }
@@ -189,9 +264,9 @@ function renderHome() {
     const covers = photos.slice(0, 4).map(p => `<img data-thumb="${p.id}" alt=""/>`).join('');
     return `<article class="album-card" data-drop="album" data-id="${esc(a.id)}"><button type="button" class="drag-handle" data-drag="album" data-id="${esc(a.id)}" data-action="ignore" aria-label="${esc(t('reorder'))}">${icon('grip', 15)}</button><button type="button" class="album-hit" data-action="selectAlbum" data-id="${esc(a.id)}"><div class="album-cover">${covers || `<span>${icon('images', 40)}</span>`}</div><div class="album-card-caption"><div class="album-name-row"><strong>${esc(a.title)}</strong></div><small>${photos.length} ${esc(t('photos'))}</small>${icon('arrow', 17)}</div></button></article>`;
   }).join('');
-  return `<div class="home-view"><section class="hero"><div class="hero-text"><div class="eyebrow">✦ YOUR PERSONAL MEMORY SPACE</div><h1>${esc(t('homeTitle'))}</h1><p>${esc(t('homeDesc'))}</p><div class="hero-actions">${button('newAlbum', `${icon('plus')} ${esc(t('addAlbum'))}`, 'primary')}${button('importAlbum', `${icon('upload')} ${esc(t('importAlbum'))}`, 'outline')}</div></div><div class="hero-art"><div class="art-circle a"></div><div class="art-circle b"></div><div class="art-icon">${icon('images', 88)}</div><div class="hero-sparkle">✧</div></div></section>
+  return `<div class="home-view"><section class="hero"><div class="hero-text"><div class="eyebrow">✦ ${esc(t('eyebrowHome'))}</div><h1>${esc(t('homeTitle'))}</h1><p>${esc(t('homeDesc'))}</p><div class="hero-actions">${button('newAlbum', `${icon('plus')} ${esc(t('addAlbum'))}`, 'primary')}${button('importAlbum', `${icon('upload')} ${esc(t('importAlbum'))}`, 'outline')}</div></div><div class="hero-art"><div class="art-circle a"></div><div class="art-circle b"></div><div class="art-icon">${icon('images', 88)}</div><div class="hero-sparkle">✧</div></div></section>
     <section class="stats-line"><div class="stat"><span>${icon('folder')}</span><b>${state.lib.albums.length}</b><small>${esc(t('albums'))}</small></div><div class="stat"><span>${icon('image')}</span><b>${count}</b><small>${esc(t('photos'))}</small></div><div class="stat"><span>${icon('heart')}</span><b>${state.lib.photos.filter(p => p.favorite).length}</b><small>${esc(t('favorites'))}</small></div></section>
-    <div class="section-head"><div><span class="eyebrow dark">CURATED COLLECTIONS</span><h2>${esc(t('albums'))}</h2></div>${button('newAlbum', `${icon('plus', 17)} ${esc(t('addAlbum'))}`, 'outline')}</div>
+    <div class="section-head"><div><span class="eyebrow dark">${esc(t('eyebrowAlbums'))}</span><h2>${esc(t('albums'))}</h2></div>${button('newAlbum', `${icon('plus', 17)} ${esc(t('addAlbum'))}`, 'outline')}</div>
     <div class="album-grid">${albumCards || `<div class="blank-state compact">${icon('folder', 42)}<h3>${esc(t('homeTitle'))}</h3>${button('newAlbum', esc(t('createFirst')), 'primary')}</div>`}</div>
   </div>`;
 }
@@ -223,18 +298,18 @@ function renderGallery() {
   const active = album();
   const items = getAlbumPhotos();
   const name = state.onlyFavorites ? t('favorites') : active?.title || t('photos');
-  const desc = state.onlyFavorites ? 'A collection of all the photos you love' : active?.description || 'Every little moment tells a story.';
+  const desc = state.onlyFavorites ? t('favoritesDesc') : active?.description || t('emptyAlbumDesc');
   const canReorder = !state.onlyFavorites && !state.search.trim();
-  const controls = state.onlyFavorites ? '' : `<div class="gallery-actions">${button('addPhotos', `${icon('plus')} ${esc(t('addPhotos'))}`, 'primary')}${button('exportPdf', `${icon('download')} ${esc(t('exportPdf'))}`, 'outline')}${button('exportAlbum', `${icon('folder')} .storily`, 'outline')}${button('previewExport', `${icon('eye')} ${esc(t('previewExport'))}`, 'outline')}${button('albumDetails', icon('dots'), 'outline', 'square')}</div>`;
+  const controls = state.onlyFavorites ? '' : `<div class="gallery-actions">${button('addPhotos', `${icon('plus')} ${esc(t('addPhotos'))}`, 'primary')}${button('exportPdf', `${icon('download')} ${esc(t('exportPdf'))}`, 'outline')}${button('exportAlbum', `${icon('folder')} <bdi>.storily</bdi>`, 'outline')}${button('previewExport', `${icon('eye')} ${esc(t('previewExport'))}`, 'outline')}${button('albumDetails', icon('dots'), 'outline', 'square')}</div>`;
   const cards = items.map(p => `<article class="photo-card ${state.view === 'list' ? 'list-item' : ''}" data-action="openPhoto" data-id="${esc(p.id)}" ${canReorder ? 'data-drop="photo"' : ''}><div class="photo-preview">${canReorder ? `<button type="button" class="drag-handle" data-drag="photo" data-id="${esc(p.id)}" data-action="ignore" aria-label="${esc(t('reorder'))}">${icon('grip', 14)}</button>` : ''}<img data-thumb="${p.id}" alt="${esc(p.name)}" draggable="false" loading="lazy"/>${p.favorite ? `<span class="fav-heart">${icon('heart', 14)}</span>` : ''}</div><div class="photo-info">${photoCardMeta(p)}</div></article>`).join('');
-  return `<div class="gallery"><div class="crumb">${esc(t('library'))} <span>/</span> ${esc(name)}</div><div class="gallery-title"><div><span class="eyebrow dark">THE MOMENTS YOU LOVE</span><h1>${esc(name)}</h1><p>${esc(desc)}</p></div>${controls}</div>
-    <div class="gallery-toolbar"><div class="search-box">${icon('search', 18)}<input id="search" placeholder="${esc(t('search'))}" value="${esc(state.search)}"/></div><div class="tools-right"><span class="count-label">${items.length} ${esc(t('photos'))}</span><select id="sort" aria-label="Sort"><option value="order" ${state.sort === 'order' ? 'selected' : ''}>${esc(t('sortManual'))}</option><option value="new" ${state.sort === 'new' ? 'selected' : ''}>${esc(t('sortNewest'))}</option><option value="old" ${state.sort === 'old' ? 'selected' : ''}>${esc(t('sortOldest'))}</option><option value="name" ${state.sort === 'name' ? 'selected' : ''}>${esc(t('sortName'))}</option></select><button class="icon-btn ${state.view === 'grid' ? 'pressed' : ''}" data-action="viewGrid" aria-label="Grid">${icon('grid', 19)}</button><button class="icon-btn ${state.view === 'list' ? 'pressed' : ''}" data-action="viewList" aria-label="List">${icon('list', 19)}</button></div></div>
+  return `<div class="gallery"><div class="crumb">${esc(t('library'))} <span>/</span> ${esc(name)}</div><div class="gallery-title"><div><span class="eyebrow dark">${esc(t('eyebrowGallery'))}</span><h1>${esc(name)}</h1><p>${esc(desc)}</p></div>${controls}</div>
+    <div class="gallery-toolbar"><div class="search-box">${icon('search', 18)}<input id="search" placeholder="${esc(t('search'))}" value="${esc(state.search)}"/></div><div class="tools-right"><span class="count-label">${items.length} ${esc(t('photos'))}</span><select id="sort" aria-label="${esc(t('sort'))}"><option value="order" ${state.sort === 'order' ? 'selected' : ''}>${esc(t('sortManual'))}</option><option value="new" ${state.sort === 'new' ? 'selected' : ''}>${esc(t('sortNewest'))}</option><option value="old" ${state.sort === 'old' ? 'selected' : ''}>${esc(t('sortOldest'))}</option><option value="name" ${state.sort === 'name' ? 'selected' : ''}>${esc(t('sortName'))}</option></select><button class="icon-btn ${state.view === 'grid' ? 'pressed' : ''}" data-action="viewGrid" aria-label="${esc(t('grid'))}">${icon('grid', 19)}</button><button class="icon-btn ${state.view === 'list' ? 'pressed' : ''}" data-action="viewList" aria-label="${esc(t('list'))}">${icon('list', 19)}</button></div></div>
     ${items.length ? `<div class="photo-grid ${state.view === 'list' ? 'list-view' : ''}">${cards}</div>` : `<div class="blank-state">${icon('image', 50)}<h2>${esc(t('noPhotos'))}</h2><p>${esc(t('noPhotosDesc'))}</p>${!state.onlyFavorites ? button('addPhotos', `${icon('plus')} ${esc(t('addPhotos'))}`, 'primary') : ''}</div>`}
   </div>`;
 }
 function renderSettings() {
   const p = state.prefs;
-  return `<div class="settings-page"><div class="crumb">STORILY / ${esc(t('settings'))}</div><h1>${esc(t('mainSettings'))}</h1><p class="settings-subtitle">Customize your experience across all your devices.</p>
+  return `<div class="settings-page"><div class="crumb">STORILY / ${esc(t('settings'))}</div><h1>${esc(t('mainSettings'))}</h1><p class="settings-subtitle">${esc(t('settingsSubtitle'))}</p>
   <div class="pref-card"><h3>${icon('globe')} ${esc(t('language'))}</h3><div class="setting-row"><span>${esc(t('language'))}</span><select id="lang"><option value="en" ${p.lang === 'en' ? 'selected' : ''}>English</option><option value="ar" ${p.lang === 'ar' ? 'selected' : ''}>العربية</option></select></div></div>
   <div class="pref-card"><h3>${icon('sun')} ${esc(t('appearance'))}</h3><div class="setting-row"><span>${esc(t('appearance'))}</span><div class="segmented"><button class="${p.theme === 'light' ? 'selected' : ''}" data-action="themeLight">${icon('sun', 16)} ${esc(t('light'))}</button><button class="${p.theme === 'dark' ? 'selected' : ''}" data-action="themeDark">${icon('moon', 16)} ${esc(t('dark'))}</button></div></div></div>
   <div class="pref-card"><h3>${icon('download')} ${esc(t('exportPdf'))}</h3><p class="settings-hint">${esc(t('pdfDefaultsNote'))}</p><div class="setting-row"><span>${esc(t('pdfStyle'))}</span><select id="pdfStyle">${styleOptions(p.pdfStyle)}</select></div>
@@ -242,11 +317,11 @@ function renderSettings() {
   <div class="setting-row"><span>${esc(t('fontSize'))}</span><input id="fontSize" type="range" min="12" max="24" value="${p.fontSize}"/><strong>${p.fontSize}px</strong></div>
   <div class="setting-row"><span>${esc(t('fontColor'))}</span><input id="fontColor" type="color" value="${esc(p.fontColor)}"/></div>
   <div class="setting-row"><span>${esc(t('showPageCount'))}</span><input id="showPageCount" type="checkbox" ${p.showPageCount !== false ? 'checked' : ''}/></div>${pdfPreviewBlock('settings')}</div>
-  <div class="privacy-note">${icon('lock')} Your albums are stored on this device. No cloud account or external service is required.</div></div>`;
+  <div class="privacy-note">${icon('lock')} ${esc(t('privacyNote'))}</div></div>`;
 }
 function renderModal() {
   if (!state.modal) return '';
-  if (state.modal === 'newAlbum') return `<div class="overlay" data-action="closeModal"><form class="modal small" id="newAlbumForm"><div class="modal-heading"><h2>${esc(t('addAlbum'))}</h2><button type="button" class="icon-btn" data-action="closeModal">${icon('close')}</button></div><p>Give your new collection a name.</p><label>${esc(t('albumName'))}<input name="title" required autofocus maxlength="120" placeholder="Summer memories"/></label><div class="modal-actions"><button type="button" class="btn btn-outline" data-action="closeModal">${esc(t('cancel'))}</button><button class="btn btn-primary" type="submit">${esc(t('create'))}</button></div></form></div>`;
+  if (state.modal === 'newAlbum') return `<div class="overlay" data-action="closeModal"><form class="modal small" id="newAlbumForm"><div class="modal-heading"><h2>${esc(t('addAlbum'))}</h2><button type="button" class="icon-btn" data-action="closeModal">${icon('close')}</button></div><p>${esc(t('newAlbumHint'))}</p><label>${esc(t('albumName'))}<input name="title" required autofocus maxlength="120" placeholder="${esc(t('albumPlaceholder'))}"/></label><div class="modal-actions"><button type="button" class="btn btn-outline" data-action="closeModal">${esc(t('cancel'))}</button><button class="btn btn-primary" type="submit">${esc(t('create'))}</button></div></form></div>`;
   if (state.modal === 'albumDetails') {
     const a = album(); if (!a) return '';
     const pdf = resolvePdf(a);
@@ -265,7 +340,7 @@ function renderModal() {
     const editing = state.editTab === 'edit';
     const mode = state.edit.mode === 'preview' ? 'preview' : 'edit';
     const tabs = `<div class="tabbar"><button type="button" class="${editing ? '' : 'on'}" data-action="tabDetails">${icon('list', 16)} ${esc(t('details'))}</button><button type="button" class="${editing ? 'on' : ''}" data-action="tabEdit">${icon('edit', 16)} ${esc(t('imageEditor'))}</button></div>`;
-    const details = `<form id="photoForm"><label>${esc(t('description'))}<textarea name="description" rows="3">${esc(p.description)}</textarea></label><div class="two-fields"><label>${esc(t('location'))}<input name="location" value="${esc(p.location)}" placeholder="Baghdad, Iraq"/></label><label>${esc(t('date'))}<input name="takenAt" type="date" value="${esc((p.takenAt || '').slice(0, 10))}"/></label></div><label>${esc(t('tags'))}<input name="tags" value="${esc((p.tags || []).join(', '))}"/></label><label>${esc(t('alignment'))}<select name="textAlignment">${['left', 'center', 'right'].map(v => `<option value="${v}" ${p.textAlignment === v ? 'selected' : ''}>${v}</option>`).join('')}</select></label><label class="checkbox-row"><input type="checkbox" name="showDate" ${p.showDate !== false ? 'checked' : ''} />${esc(t('showDate'))}</label><label class="checkbox-row"><input type="checkbox" name="favorite" ${p.favorite ? 'checked' : ''} />${icon('heart', 16)} ${esc(t('favorite'))}</label><div class="modal-actions spread"><button class="btn btn-danger" type="button" data-action="deletePhoto">${icon('trash', 17)} ${esc(t('delete'))}</button><button type="submit" class="btn btn-primary">${icon('check', 17)} ${esc(t('save'))}</button></div></form>`;
+    const details = `<form id="photoForm"><label>${esc(t('description'))}<textarea name="description" rows="3">${esc(p.description)}</textarea></label><div class="two-fields"><label>${esc(t('location'))}<input name="location" value="${esc(p.location)}" placeholder="${esc(t('locationPlaceholder'))}"/></label><label>${esc(t('date'))}<input name="takenAt" type="date" value="${esc((p.takenAt || '').slice(0, 10))}"/></label></div><label>${esc(t('tags'))}<input name="tags" value="${esc((p.tags || []).join(', '))}"/></label><label>${esc(t('alignment'))}<select name="textAlignment">${alignOptions(p.textAlignment)}</select></label><label class="checkbox-row"><input type="checkbox" name="showDate" ${p.showDate !== false ? 'checked' : ''} />${esc(t('showDate'))}</label><label class="checkbox-row"><input type="checkbox" name="favorite" ${p.favorite ? 'checked' : ''} />${icon('heart', 16)} ${esc(t('favorite'))}</label><div class="modal-actions spread"><button class="btn btn-danger" type="button" data-action="deletePhoto">${icon('trash', 17)} ${esc(t('delete'))}</button><button type="submit" class="btn btn-primary">${icon('check', 17)} ${esc(t('save'))}</button></div></form>`;
     const body = editing
       ? studioMarkup(t, icon, esc)
       : `<div class="large-preview"><img id="fullImage" alt="${esc(p.name)}"/><div class="preview-tag">${p.width} × ${p.height}</div></div><div class="photo-controls">${details}</div>`;
@@ -279,8 +354,9 @@ function render() {
   document.documentElement.dir = state.prefs.lang === 'ar' ? 'rtl' : 'ltr';
   document.documentElement.dataset.theme = state.prefs.theme;
   const body = state.modal === 'settings' ? renderSettings() : (!state.albumId && !state.onlyFavorites) ? renderHome() : renderGallery();
-  const current = state.albumId ? album()?.title || 'Album' : state.onlyFavorites ? t('favorites') : t('all');
-  $('#app').innerHTML = `<div class="shell">${renderSidebar()}<main class="main-panel"><header class="topbar"><button class="icon-btn mobile-menu" data-action="toggleNav" aria-label="Menu">${icon('menu')}</button><div class="topbar-left"><span class="topbar-dot"></span> STORILY COLLECTION <span class="topbar-separator">/</span> ${esc(current)}</div><div class="topbar-right"><span class="saved-indicator"><span></span>${esc(t('ready'))}</span><button class="icon-btn" data-action="settings" title="${esc(t('settings'))}">${icon('settings')}</button></div></header><div class="content">${body}</div></main></div>${renderModal()}<input hidden type="file" id="imagePicker" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp,image/tiff" multiple/><input hidden type="file" id="albumPicker" accept=".storily,application/json"/><div id="toast" aria-live="polite"></div>${state.mobileNav ? `<button class="nav-backdrop" data-action="toggleNav" aria-label="Close navigation"></button>` : ''}`;
+  const current = state.albumId ? album()?.title || t('albumFallback') : state.onlyFavorites ? t('favorites') : t('all');
+  document.documentElement.style.setProperty('--drop-label', `"${t('dragHere').replace(/"/g, '')}"`);
+  $('#app').innerHTML = `<div class="shell">${renderSidebar()}<main class="main-panel"><header class="topbar"><button class="icon-btn mobile-menu" data-action="toggleNav" aria-label="${esc(t('menu'))}">${icon('menu')}</button><div class="topbar-left"><span class="topbar-dot"></span> ${esc(t('collection'))} <span class="topbar-separator">/</span> ${esc(current)}</div><div class="topbar-right"><span class="saved-indicator"><span></span>${esc(t('ready'))}</span><button class="icon-btn" data-action="settings" title="${esc(t('settings'))}">${icon('settings')}</button></div></header><div class="content">${body}</div></main></div>${renderModal()}<input hidden type="file" id="imagePicker" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp,image/tiff" multiple/><input hidden type="file" id="albumPicker" accept=".storily,application/json"/><div id="toast" aria-live="polite"></div>${state.mobileNav ? `<button class="nav-backdrop" data-action="toggleNav" aria-label="${esc(t('closeNav'))}"></button>` : ''}`;
   loadThumbs();
   if (state.modal === 'photo' && state.editTab === 'edit') bindStudio(studioEnv());
   else { unbindStudio(); if (state.modal === 'photo') loadFullPhoto(); }
@@ -308,7 +384,7 @@ function toast(message, bad = false) {
   el.textContent = String(message); el.className = bad ? 'toast-error visible' : 'visible';
   clearTimeout(toast.timer); toast.timer = setTimeout(() => { if (el.isConnected) el.className = ''; }, 3500);
 }
-function report(e) { console.error(e); toast(e?.message || String(e), true); }
+function report(e) { console.error(e); toast(userMessage(e?.message || e), true); }
 async function refresh() {
   state.lib = await invoke('load_library');
   if (state.albumId && !album()) state.albumId = null;
@@ -346,13 +422,13 @@ async function addSelectedFiles(files) {
   if (!state.albumId) { toast(t('chooseAlbum'), true); return; }
   try {
     const list = Array.from(files).filter(f => f.type.startsWith('image/') && f.size <= 40 * 1024 * 1024);
-    if (!list.length) return toast('No supported image files (40 MiB maximum).', true);
+    if (!list.length) return toast(t('errNoImages'), true);
     let imported = 0;
     for (let at = 0; at < list.length; at += 10) {
       const images = await Promise.all(list.slice(at, at + 10).map(async f => ({ name: f.name.replace(/\.[^.]+$/, ''), mimeType: f.type, data: await readAsDataURL(f) })));
       imported += await invoke('add_images', { albumId: state.albumId, images });
     }
-    await refresh(); toast(`${imported} images added successfully.`);
+    await refresh(); toast(tf('imagesAdded', { n: imported }));
   } catch (e) { report(e); await refresh(); }
 }
 async function defaultSavePath(filename) {
@@ -366,10 +442,10 @@ async function saveBlob(blob, filename, extension) {
   const bytes = new Uint8Array(await blob.arrayBuffer());
   if (isTauri()) {
     const target = await save({
-      title: extension === 'pdf' ? 'Save PDF' : 'Save album',
+      title: extension === 'pdf' ? t('savePdf') : t('saveAlbum'),
       defaultPath: await defaultSavePath(filename),
       canCreateDirectories: true,
-      filters: [{ name: extension === 'pdf' ? 'PDF document' : 'Storily album', extensions: [extension] }],
+      filters: [{ name: extension === 'pdf' ? t('pdfDocument') : t('storilyAlbum'), extensions: [extension] }],
     });
     if (!target) return;
     await writeFile(target, bytes);
@@ -386,7 +462,7 @@ async function saveBlob(blob, filename, extension) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a'); a.href = url; a.download = filename; document.body.appendChild(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 15000);
-  toast(`Prepared ${filename}. If your mobile WebView blocks downloads, use a device share target.`);
+  toast(tf('preparedDownload', { name: filename }));
 }
 function slug(value) { return String(value || 'album').replace(/[\\/:*?"<>|]/g, '_').slice(0, 80); }
 function exportPhotos(a) {
@@ -403,7 +479,7 @@ async function exportPortable() {
 function openExportPreview() {
   const a = album();
   if (!a) return;
-  if (!exportPhotos(a).length) return toast('Add photos before exporting PDF.', true);
+  if (!exportPhotos(a).length) return toast(t('addPhotosFirst'), true);
   state.previewIndex = 0;
   state.modal = 'exportPreview';
   render();
@@ -421,7 +497,7 @@ async function importPortable(file) {
   try {
     const json = await file.text();
     const imported = await invoke('import_album', { content: json, fileName: file.name });
-    state.albumId = imported.id; state.onlyFavorites = false; await refresh(); toast(`Imported ${imported.title}`);
+    state.albumId = imported.id; state.onlyFavorites = false; await refresh(); toast(tf('importedAlbum', { name: imported.title }));
   } catch (e) { report(e); }
 }
 function imageElement(data) { return new Promise((resolve, reject) => { const img = new Image(); img.onload = () => resolve(img); img.onerror = reject; img.src = data; }); }
@@ -671,7 +747,7 @@ function previewImage() {
   }
   return previewImagePromise;
 }
-const previewPhoto = { name: 'Summer afternoon', description: 'A quiet walk kept just as it was, where the light stayed on the street a little longer.', location: 'Baghdad', takenAt: '2024-07-01', showDate: true, textAlignment: 'left' };
+const samplePreviewPhoto = () => ({ name: t('previewSampleName'), description: t('previewSampleDesc'), location: t('previewSamplePlace'), takenAt: '2024-07-01', showDate: true, textAlignment: state.prefs.lang === 'ar' ? 'right' : 'left' });
 function lookFromSettings() {
   const style = $('#pdfStyle')?.value;
   if (!style) return resolvePdf(null);
@@ -729,8 +805,8 @@ async function drawPdfPreviews() {
     canvas.height = Math.round(PDF_H * scale);
     const ctx = canvas.getContext('2d');
     ctx.setTransform(scale, 0, 0, scale, 0, 0);
-    const albumName = canvas.dataset.pdfPreview === 'album' ? (album()?.title || 'Summer') : 'Summer';
-    paintPdfPage(ctx, { ...look, image, photo: previewPhoto, index: 0, total: 3, albumName });
+    const albumName = canvas.dataset.pdfPreview === 'album' ? (album()?.title || t('previewAlbum')) : t('previewAlbum');
+    paintPdfPage(ctx, { ...look, image, photo: samplePreviewPhoto(), index: 0, total: 3, albumName });
     const label = canvas.parentElement?.querySelector('.pdf-preview-label');
     if (label) label.textContent = themeLabel(look.style);
   }
@@ -738,7 +814,7 @@ async function drawPdfPreviews() {
 async function createPdf() {
   const a = album(); if (!a) return;
   const photos = exportPhotos(a);
-  if (!photos.length) return toast('Add photos before exporting PDF.', true);
+  if (!photos.length) return toast(t('addPhotosFirst'), true);
   const look = resolvePdf(a);
   toast(t('creatingPdf'));
   await new Promise(resolve => requestAnimationFrame(resolve));
@@ -1012,7 +1088,7 @@ async function addDroppedPaths(paths) {
   if (state.modal || pointerDrag) return;
   try {
     const imported = await invoke('add_image_paths', { albumId: state.albumId, paths });
-    await refresh(); toast(`${imported} images added successfully.`);
+    await refresh(); toast(tf('imagesAdded', { n: imported }));
   } catch (e) { report(e); await refresh(); }
 }
 app.addEventListener('dragenter', event => { if (pointerDrag || !fileDrag(event) || !albumCanTakeFiles()) return; event.preventDefault(); showFileDrop(true); });
@@ -1086,5 +1162,5 @@ if (import.meta.env.DEV) {
 }
 (async function boot() {
   try { await refresh(); }
-  catch (e) { console.error(e); $('#app').innerHTML = `<div class="startup-error"><h2>Unable to start Storily</h2><p>${esc(e.message || e)}</p><small>Open this app with Tauri (npm run tauri dev), not as a regular website.</small></div>`; }
+  catch (e) { console.error(e); $('#app').innerHTML = `<div class="startup-error"><h2>${esc(t('startupTitle'))}</h2><p>${esc(userMessage(e.message || e))}</p><small>${esc(t('startupHint'))}</small></div>`; }
 })();

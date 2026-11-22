@@ -1,6 +1,6 @@
 [package]
 name = "storily"
-version = "0.1.0"
+version = "0.1.1"
 description = "Storily cross-platform image archive"
 authors = ["Storily contributors"]
 edition = "2021"
